@@ -1,0 +1,1 @@
+@extends('layouts.app')@section('content')    <p><a href="../posts" class="btn-success">Back</a></p>    <h1> {{$post->title}}</h1>    <small>Written on: {{$post->created_on}}</small>    <div>        {{$post->body}}    </div>@endsection

@@ -11,6 +11,33 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// routing the welcome page
+Route::get('/', 'PageController@index');
+Route::get('/about', 'PageController@about');
+Route::get('/welcome', 'PageController@welcome');
+Route::get('/services', 'PageController@services');
+//Route::get('/posts', 'PostsController@index');
+
+Route::resource('posts','PostsController');
+
+/*
+
+
+//Routing the hello world text
+Route::get('/hello', function () {
+
+   return view('welcome');
+    // return 'Hello world';
+});
+// Routing the about page
+Route::get('/about', function () {
+
+ return view('about');
+
+});
+// Routing the about page
+Route::get('/index', function () {
+
+    return view('index');
+
 });
