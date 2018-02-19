@@ -29,5 +29,10 @@ class PageController extends Controller
 
         return view ('pages.services')->with($data);
 
-    }
+   }
+//    public function post(){
+//        $title = 'post Page';
+//        return view ('posts.index')->with('title',$title);
+//
+//    }
 }
