@@ -1,1 +1,1 @@
-@extends('layouts.app')@section('content')    <h1>{{$title}}</h1>    <p> About page</p>@endsection
+@extends('layouts.app')@section('content')    <h1>{{$title}}</h1>    <p> List of service provider</p>@endsection
