@@ -30,6 +30,10 @@ class PageController extends Controller
         return view ('pages.services')->with($data);
 
    }
+    public function contact(){
+        $title = 'Contact Page';
+        return view ('pages.contact')->with('title',$title);
+    }
 //    public function post(){
 //        $title = 'post Page';
 //        return view ('posts.index')->with('title',$title);

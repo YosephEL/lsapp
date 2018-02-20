@@ -1,24 +1,41 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+    <p>
+
+    </p>
+        <div >
             <div class="panel panel-default">
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    <a href="/posts/create" class="btn btn-primary">Create Post</a>
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
+                    <a href="/posts/create" class="btn btn-primary">Create New Post</a>
+                   @if(count($posts) > 0)
+                    <table class="table table-striped">
+                        <tr>
+                            <th> Tittle </th>
+                            <th> Body</th>
+                            <th> </th>
+                        </tr>
+                        @foreach($posts as $post)
+                            <tr>
+                                <td> {{$post->title}}</td>
+                                <td> {{$post->title}}</td>
+
+                                <th> <a href="/posts/{{$post->id}}/edit" class="btn btn-default">Edite</a> </th>
+                                <th> </th>
+
+                            </tr>
+
+
+
+                        @endforeach
+                        </table>
+                       @else
+                       <p>No data</p>
                     @endif
 
-                    You are logged in!
+
                 </div>
             </div>
-        </div>
-    </div>
-</div>
 @endsection

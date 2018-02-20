@@ -14,9 +14,9 @@
 // routing the welcome page
 Route::get('/', 'PageController@index');
 Route::get('/pages/about', 'PageController@about');
-Route::get('/welcome', 'PageController@welcome');
+//Route::get('/welcome', 'PageController@welcome');
 Route::get('/services', 'PageController@services');
-//Route::get('/posts', 'PostsController@index');
+Route::get('/pages/contact', 'PageController@contact');
 
 Route::resource('posts','PostsController');
 
