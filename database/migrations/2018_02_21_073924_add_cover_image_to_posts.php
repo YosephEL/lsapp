@@ -16,7 +16,7 @@ class AddCoverImageToPosts extends Migration
         //
 
         Schema::table('posts',function ($table){
-            $table->integer('cover_image');
+            $table->string('cover_image');
         });
     }
 
