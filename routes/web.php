@@ -11,6 +11,9 @@
 |
 */
 
+use App\Jobs\SendReminderEmail;
+use Carbon\Carbon;
+
 // routing the welcome page
 Route::get('/', 'PageController@index');
 Route::get('/pages/about', 'PageController@about');
@@ -45,3 +48,13 @@ Route::get('/index', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/password', function () {
+
+    $job = (new SendReminderEmail())
+        ->delay(Carbon::now()->addSecond(10));
+
+    dispatch($job);
+    return 'Hallo, Your Reset request sent check your email ';
+
+});

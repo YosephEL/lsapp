@@ -22,10 +22,14 @@ class PageController extends Controller
         return view ('pages.about')->with('title',$title);
     }
     public function services(){
-        $data = [
+        $data = array(
             'title'=> 'Services Provider',
-            'services'=> ['Name','Address','City','Phone Number']
-        ];
+            'services'=> array(
+                ('ICT' )=> 'Programming',
+                ('Database' )=> 'Database Management'
+
+            )
+        );
 
         return view ('pages.services')->with($data);
 

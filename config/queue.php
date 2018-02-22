@@ -14,6 +14,7 @@ return [
     | Supported: "sync", "database", "beanstalkd", "sqs", "redis", "null"
     |
     */
+    // symc defoult is symcü
 
     'default' => env('QUEUE_DRIVER', 'sync'),
 
