@@ -17,12 +17,13 @@ use Carbon\Carbon;
 // routing the welcome page
 Route::get('/', 'PageController@index');
 Route::get('/pages/about', 'PageController@about');
-//Route::get('/welcome', 'PageController@welcome');
 Route::get('/services', 'PageController@services');
+Route::get('/producers', 'Pr_ProducersController@index');
 Route::get('/pages/contact', 'PageController@contact');
 
 Route::resource('posts','PostsController');
 
+Route::resource('producers','Pr_ProducersController');
 
 
 
@@ -56,5 +57,4 @@ Route::get('/password', function () {
 
     dispatch($job);
     return 'Hallo, Your Reset request sent check your email ';
-
-});
+    });
