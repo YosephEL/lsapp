@@ -18,12 +18,17 @@ use Carbon\Carbon;
 Route::get('/', 'PageController@index');
 Route::get('/pages/about', 'PageController@about');
 Route::get('/services', 'PageController@services');
-Route::get('/producers', 'Pr_ProducersController@index');
+
 Route::get('/pages/contact', 'PageController@contact');
+
+
 
 Route::resource('posts','PostsController');
 
 Route::resource('producers','Pr_ProducersController');
+
+
+
 
 
 

@@ -4,19 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\pr_producers;
-use DB;
 
 class Pr_ProducersController extends Controller
 {
     /**
      * Create a new controller instance.
      *
-     * @return void
+     * @return $PK_pr_producers
      */
+
     public function __construct()
     {
         //$this->middleware('auth',['except'=>['index','show']]);
-        $this->middleware('auth');
+        //$this->middleware('auth');
 
     }
 
@@ -29,11 +29,8 @@ class Pr_ProducersController extends Controller
     public function index()
     {
         //
-        //$post = DB::select('SELECT * FROM pr_producers');
-        //$title = 'Post page';
-       $pr_producers = pr_producers::orderBy('firstname','asc')->paginate(10);
+     $pr_producers = pr_producers::orderBy('PK_pr_producers','asc')->paginate(3);
         return view('gebinfo.index')->with('pr_producers',$pr_producers);
-       // return view ('gebinfo.index')->with('title',$title);
 
 
 
@@ -48,6 +45,7 @@ class Pr_ProducersController extends Controller
     public function create()
     {
         //
+        return view('gebinfo.index');
     }
 
     /**
@@ -60,26 +58,27 @@ class Pr_ProducersController extends Controller
     {
         //
        // $pr_producers = new pr_producers;
+        $pr_producers = new Pr_producers;
 
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $PK_pr_producers
      * @return \Illuminate\Http\Response
      */
     public function show($PK_pr_producers)
     {
         //
         $pr_producers = pr_producers::find($PK_pr_producers);
-        return view('gebinfo.index')->with('pr_producers',$pr_producers);
+        return view('gebinfo.show')->with('pr_producers',$pr_producers);
+        //return view('gebinfo.show');
     }
-
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $PK_pr_producers
      * @return \Illuminate\Http\Response
      */
     public function edit($PK_pr_producers)
@@ -91,10 +90,10 @@ class Pr_ProducersController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  int  $PK_pr_producers
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $PK_pr_producers)
     {
         //
     }
@@ -102,7 +101,7 @@ class Pr_ProducersController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int  $PK_pr_producers
      * @return \Illuminate\Http\Response
      */
     public function destroy($PK_pr_producers)

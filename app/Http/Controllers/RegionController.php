@@ -1,0 +1,1 @@
+<?phpnamespace App\Http\Controllers;use Illuminate\Http\Request;use App\Region;use DB;class RegionController extends Controller{}
