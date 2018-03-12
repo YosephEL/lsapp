@@ -12,20 +12,17 @@ class pr_producers extends Model
     protected $table = 'pr_producers';
 
 
-    protected $primaryKey  ='$PK_pr_producers';
+    public $primaryKey  ='id';
 
-    protected $foreignKey ='$FK_pr_producers';
-
-
+    public $foreignKey ='PK_pr_producers';
 
 
 
-    public function pr_producers()
-    {
-        return $this->belongsTo('App\pr_producers', '$FK_pr_producers');
-    }
 
-
-
+//
+//    public function pr_producers()
+//    {
+//        return $this->hasOne('App\pr_producers', 'foreign_key',$FK_pr_producers);
+//    }
 
 }

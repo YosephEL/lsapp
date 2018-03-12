@@ -15,7 +15,7 @@ class Pr_ProducersController extends Controller
 
     public function __construct()
     {
-        //$this->middleware('auth',['except'=>['index','show']]);
+        $this->middleware('auth',['except'=>['index','show']]);
         //$this->middleware('auth');
 
     }
@@ -29,7 +29,7 @@ class Pr_ProducersController extends Controller
     public function index()
     {
         //
-     $pr_producers = pr_producers::orderBy('PK_pr_producers','asc')->paginate(3);
+     $pr_producers = pr_producers::orderBy('PK_pr_producers')->paginate(3);
         return view('gebinfo.index')->with('pr_producers',$pr_producers);
 
 
@@ -71,9 +71,12 @@ class Pr_ProducersController extends Controller
     public function show($PK_pr_producers)
     {
         //
+        //select * from `pr_producers` where `pr_producers`.`$PK_pr_producers` = 15TGA16BR020
         $pr_producers = pr_producers::find($PK_pr_producers);
         return view('gebinfo.show')->with('pr_producers',$pr_producers);
         //return view('gebinfo.show');
+        //return pr_producers::find($PK_pr_producers);
+
     }
     /**
      * Show the form for editing the specified resource.
@@ -84,6 +87,9 @@ class Pr_ProducersController extends Controller
     public function edit($PK_pr_producers)
     {
         //
+
+        return view ('gebinfo.edit');
+
     }
 
     /**

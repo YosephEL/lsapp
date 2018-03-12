@@ -25,7 +25,9 @@ Route::get('/pages/contact', 'PageController@contact');
 
 Route::resource('posts','PostsController');
 
-Route::resource('producers','Pr_ProducersController');
+//Route::resource('producers','Pr_ProducersController');
+
+Route::resource('gebinfo','Pr_ProducersController');
 
 
 
