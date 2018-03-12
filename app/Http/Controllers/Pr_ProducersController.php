@@ -15,7 +15,7 @@ class Pr_ProducersController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth',['except'=>['index','show']]);
+        $this->middleware('auth',['except'=>['index','show','edit','update','store']]);
         //$this->middleware('auth');
 
     }
@@ -31,10 +31,6 @@ class Pr_ProducersController extends Controller
         //
      $pr_producers = pr_producers::orderBy('PK_pr_producers')->paginate(3);
         return view('gebinfo.index')->with('pr_producers',$pr_producers);
-
-
-
-
     }
 
     /**
@@ -84,11 +80,12 @@ class Pr_ProducersController extends Controller
      * @param  int  $PK_pr_producers
      * @return \Illuminate\Http\Response
      */
-    public function edit($PK_pr_producers)
+    public function edit($id)
     {
         //
 
-        return view ('gebinfo.edit');
+        $pr_producers = pr_producers::find($id);
+        return view('gebinfo.edit')->with('pr_producers',$pr_producers);
 
     }
 
@@ -99,9 +96,22 @@ class Pr_ProducersController extends Controller
      * @param  int  $PK_pr_producers
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $PK_pr_producers)
+    public function update(Request $request, $id)
     {
         //
+        $this->validate($request,[
+            'firstname'=>'required',
+            'lastname' => 'required',
+
+        ]);
+        $pr_producers = pr_producers::find($id);
+        $pr_producers->firstname = $request->input('firstname');
+        $pr_producers->lastname = $request->input('lastname');
+
+
+        $pr_producers->save();
+
+        return redirect('/gebinfo')->with('success','Updated');
     }
 
     /**
@@ -113,6 +123,21 @@ class Pr_ProducersController extends Controller
     public function destroy($PK_pr_producers)
     {
         //
+//        $post = Post::find($id);
+//
+//        //Check for correct user
+//
+//        if(auth()->user()->id !== $post->user_id){
+//            return redirect('/posts')->with('error','Unauthorized page');
+//        }
+//        if($post->cover_image != 'noimage.jpg'){
+//            // delete image
+//            Storage::delete('public/cover_image/'.$post->cover_image);
+//        }
+//        $post->delete();
+//        return redirect('/posts')->with('success','Post Deleted');
+
+
 
     }
 }

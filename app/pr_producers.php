@@ -13,8 +13,8 @@ class pr_producers extends Model
 
 
     public $primaryKey  ='id';
-
     public $foreignKey ='PK_pr_producers';
+    public $timestamps = false;
 
 
 
