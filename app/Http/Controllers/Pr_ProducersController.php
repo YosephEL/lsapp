@@ -43,7 +43,12 @@ class Pr_ProducersController extends Controller
         //
         return view('gebinfo.index');
     }
-
+    public function search()
+    {
+        //
+        
+        //return view('gebinfo.index');
+    }
     /**
      * Store a newly created resource in storage.
      *

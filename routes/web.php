@@ -29,9 +29,10 @@ Route::resource('posts','PostsController');
 
 Route::resource('gebinfo','Pr_ProducersController');
 
+Route::resource('infogebanabenin','Add_PrproducerController');
 
 
-
+Route::resource('queries', 'QueryController');
 
 
 //Routing the hello world text
