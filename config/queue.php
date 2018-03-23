@@ -30,6 +30,10 @@ return [
     */
 
     'connections' => [
+        'rabbitmq' => [
+            'driver' => 'rabbitmq',
+            'factory_class' => Enqueue\AmqpBunny\AmqpConnectionFactory::class,
+        ],
 
         'sync' => [
             'driver' => 'sync',
