@@ -21,7 +21,7 @@ class PageController extends Controller
         $title = 'About Page';
         return view ('pages.about')->with('title',$title);
     }
-    public function services(){
+    public function messaging(){
         $data = array(
             'title'=> 'Services Provider',
             'services'=> array(
@@ -31,7 +31,7 @@ class PageController extends Controller
             )
         );
 
-        return view ('pages.services')->with($data);
+        return view ('messaging.index')->with($data);
 
    }
     public function contact(){

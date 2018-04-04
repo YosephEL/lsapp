@@ -164,7 +164,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Unisharp\Ckeditor\ServiceProvider::class,
-
+        App\Providers\RabbitMQServiceProvider::class,
         /*
          * Package Service Providers...
          */

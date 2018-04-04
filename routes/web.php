@@ -31,6 +31,7 @@ Route::resource('gebinfo','Pr_ProducersController');
 
 Route::resource('infogebanabenin','Add_PrproducerController');
 
+Route::resource('messaging','MessageController');
 
 Route::resource('queries', 'QueryController');
 

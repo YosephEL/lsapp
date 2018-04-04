@@ -1,0 +1,1 @@
+@extends('layouts.app')@section('content')    <div class="jumbotron text-center">        <h1>Welcome to  Messaging!</h1>        <p><a class="btn btn-primary btn-lg" href="/sender.php" role="button">Send Message</a>            <a class="btn btn-primary btn-lg" href="/receive.php" role="button">Receive Message</a>        </p>    </div>@endsection
