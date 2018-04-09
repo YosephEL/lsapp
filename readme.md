@@ -27,7 +27,7 @@ Download the levavel installer into a machine
 Via Composer, type 
 Comoser create-project laravel/messagingq
 Development Environments requires, 
--	Nginx, PHP 5.6, MySQL, Radis,
+-	Nginx, PHP 5.6, MySQL, RabbitMQ, 
 
 ```
 Give examples
@@ -46,17 +46,22 @@ php artisan make:controller messageController
 create a Routing function 
 under \app\Http\Controllers directory 
 open  messageController php file 
+
 public function index()
+
     {
         //
         return view('messaging.index');
     }
+    
 If you hit the /index rout in your web browser, you will see index page 
 Create Send and Receive php file under messaging 
 
 Create ORM in routes folder web.php file
 
+
  Route::resource('messaging','MessageController');
+
 
 ### Installing
 
@@ -80,41 +85,34 @@ End with an example of getting some data out of the system or using it for a lit
 
 Explain how to run the automated tests for this system
 
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
 
 ### And coding style tests
 
-Explain what these tests test and why
-
+Source code testing, 
 ```
 Give an example
 ```
-
+open the url and review. 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
-
+In progress
 ## Built With
+Laravel and RabbitMQ
 
-## Contributing
-
+## Contributing by 
+Laravel and RabbitMQ
 Please read
 ## Versioning
-
+Free version 
 ## Authors
 
+Y.Lechebo 
 ## License
 
+free licence 
 
 ## Acknowledgments
 
 * Hat tip to anyone who's code was used
 * Inspiration
-* etc
-
+* etc 
