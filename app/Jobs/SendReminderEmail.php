@@ -32,7 +32,7 @@ class SendReminderEmail implements ShouldQueue
     public function handle()
     {
         //
-        Mail::to('yoseph.lechebo@powercoders.org')->send(new SendMailMailable());
+
 
     }
 }

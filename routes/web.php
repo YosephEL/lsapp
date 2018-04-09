@@ -17,7 +17,7 @@ use Carbon\Carbon;
 // routing the welcome page
 Route::get('/', 'PageController@index');
 Route::get('/pages/about', 'PageController@about');
-Route::get('/services', 'PageController@services');
+Route::get('/messaging', 'PageController@messaging');
 
 Route::get('/pages/contact', 'PageController@contact');
 
@@ -37,15 +37,15 @@ Route::resource('queries', 'QueryController');
 
 
 //Routing the hello world text
-Route::get('/hello', function () {
+Route::get('/sender', function () {
 
-   return view('welcome');
+   return view('messaging.sender');
     // return 'Hello world';
 });
 // Routing the about page
-Route::get('/about', function () {
+Route::get('/receive', function () {
 
- return view('about');
+ return view('messageing.receive');
 
 });
 // Routing the about page

@@ -22,16 +22,8 @@ class PageController extends Controller
         return view ('pages.about')->with('title',$title);
     }
     public function messaging(){
-        $data = array(
-            'title'=> 'Services Provider',
-            'services'=> array(
-                ('ICT' )=> 'Programming',
-                ('Database' )=> 'Database Management'
 
-            )
-        );
-
-        return view ('messaging.index')->with($data);
+        return view ('messaging.index');
 
    }
     public function contact(){
