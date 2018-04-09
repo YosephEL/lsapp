@@ -3,22 +3,21 @@
 This demo program used for Info-Gebana mobile app integration project  on RabbitMQ Message queue and Laravel Framework. 
 ## How to use the program
 
-Stapes for new development 
--Download and Install composer to use this program from www.getcomposer.org on the machine 
--Install laravel Framework 
-    Via composer 
-    - composer create-project --prefer-dist laravel/laravel "blog" or "project name"
-  After you insall laravel project 
+step 1
+-Download and Install composer to use this program from
+ www.getcomposer.org
+-Install laravel Framework Via composer 
+    - composer create-project --prefer-dist laravel/integrtiongma "blog" or "project name"
+  After you insalling laravel project 
     - go to comoser.json file
         Add 
             -         "php-amqplib/php-amqplib": ">=2.6.1"
             -         "enqueue/amqp-bunny": "^0.8",
-Steps for using the exist github repository.
-    Clone from github 
-        - if you have composer in your machine 
-   go to the directory folder and type "composer update"
+Step 2 for using the laravel framework 
+ in the integrationgma folder 
+  Type and hit "composer update"
 
-### Prerequisites
+### More Steps
 
 What things you need to install the software and how to install them
 Global Requires 
@@ -33,7 +32,11 @@ Development Environments requires,
 ```
 Give examples
 ```
-Download and Install composer to use this program from www.getcomposer.org on the machine -Install laravel Framework Via composer - composer create-project --prefer-dist laravel/integrationgma  or "project name" After you insall laravel project - go to comoser.json file Add - "php-amqplib/php-amqplib": ">=2.6.1" - "enqueue/amqp-bunny": "^0.8", 
+Download and Install composer to use this program 
+from www.getcomposer.org on the machine, 
+then -Install laravel Framework Via composer 
+- composer create-project --prefer-dist laravel/integrationgma  or "project name" After you insall laravel project - go to comoser.json file Add - "php-amqplib/php-amqplib": ">=2.6.1" - "enqueue/amqp-bunny": "^0.8", 
+
 1. Create Controller for the index page 
 Create a messaging folder under \resources\views directory, 
 Create index.blade.php file under the messaing folder 
